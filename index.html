@@ -1,129 +1,766 @@
-<!DOCTYPE html><html><head>
-            <title></title>
-            
-          <script defer="" data-domain="ny-assistance.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script><script defer="" data-domain="ny-assistance.tiiny.site" src="https://analytics.tiiny.site/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script></head>
-          <body>
-            <li>Languages: English, Spanish</li>
-                            <li>Services: Housing Counseling</li>
-                            <li>Assistance: In Person and Phone Counseling</li>
-                            <li>Hours: Monday - Friday, 8:30am - 6pm</li>
-                            <li>Address: 75 South Broadway, #340, White Plains, NY, 10601</li>
-                        
-                    
-                    <li>
-                        <strong>Housing &amp; Family Services of Greater NY</strong>
-                        <ul>
-                            <li>Phone: 718-435-7585</li>
-                            <li>Website: <a href="brooklynhousing.org" target="_blank" class="text-blue-500 hover:underline">brooklynhousing.org</a></li>
-                            <li>Languages: English, Spanish, Creole, Russian, Mandarin, Cantonese</li>
-                            <li>Services: Housing Counseling</li>
-                            <li>Assistance: In Person and Phone Counseling</li>
-                            <li>Hours: Monday - Friday, 9am - 5pm by appointment</li>
-                            <li>Address: 415 Albemarle Road, Brooklyn, NY, 11218</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Human Development Services of Westchester, Inc.</strong>
-                        <ul>
-                            <li>Phone: 914-835-8906</li>
-                            <li>Website: <a href="www.hdsw.org" target="_blank" class="text-blue-500 hover:underline">www.hdsw.org</a></li>
-                            <li>Languages: English, Spanish</li>
-                            <li>Services: Housing Counseling</li>
-                            <li>Assistance: In Person and Phone Counseling</li>
-                            <li>Hours: Monday - Friday, 9am - 5pm</li>
-                            <li>Address: 930 Mamaroneck Avenue, Mamaroneck, NY, 10543</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Putnam County Housing Corporation</strong>
-                        <ul>
-                            <li>Phone: 845-225-8493</li>
-                            <li>Website: <a href="putnamhousing.com" target="_blank" class="text-blue-500 hover:underline">putnamhousing.com</a></li>
-                            <li>Languages: English, Spanish, Polish</li>
-                            <li>Services: Housing Counseling</li>
-                            <li>Assistance: Phone Counseling</li>
-                            <li>Hours: Monday - Friday, 8:30am - 4:30pm</li>
-                            <li>Address: 11 Seminary Hill Road, Carmel, NY, 10512</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>The SafeGuard Group</strong>
-                        <ul>
-                            <li>Phone: 800-673-6993 ext. 146</li>
-                            <li>Website: <a href="www.safeguardcredit.org" target="_blank" class="text-blue-500 hover:underline">www.safeguardcredit.org</a></li>
-                            <li>Languages: English, Spanish</li>
-                            <li>Services: Housing Counseling</li>
-                            <li>Assistance: Phone Counseling</li>
-                            <li>Hours: Monday - Friday, 9am - 5:30pm</li>
-                            <li>Address: 67 Fort Salonga Road, Northport, NY, 11768</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Westchester Residential Opportunities</strong>
-                        <ul>
-                            <li>Phone: 914-428-4507 ext. 338</li>
-                            <li>Website: <a href="www.wroinc.org" target="_blank" class="text-blue-500 hover:underline">www.wroinc.org</a></li>
-                            <li>Languages: English, Spanish, French</li>
-                            <li>Services: Housing Counseling</li>
-                            <li>Assistance: In Person and Phone Counseling</li>
-                            <li>Hours: Monday - Friday, 8am - 5pm</li>
-                            <li>Address: 470 Mamaroneck Avenue, Suite 410, White Plains, NY, 10605</li>
-                        </ul>
-                    </li>
-                
-            
-        
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York Homeowner Assistance Resources</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+        function toggleSection(id) {
+            const section = document.getElementById(id);
+            const icon = document.querySelector(`#${id}-button i`);
+            if (section.classList.contains('hidden')) {
+                section.classList.remove('hidden');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                section.classList.add('hidden');
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto py-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">New York Homeowner Assistance Resources</h1>
 
         <div class="bg-white rounded-lg shadow-md mb-4 overflow-hidden">
-            <button class="w-full text-left py-4 px-6 font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none" onclick="toggleSection('additional-resources')">
-                Additional Resources
+            <button id="contact-info-button"
+                class="w-full text-left py-4 px-6 font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                onclick="toggleSection('contact-info')">
+                ALL CONTACT INFORMATION
                 <i class="fas fa-chevron-down ml-2"></i>
             </button>
-            <div id="additional-resources" class="p-6 hidden">
+            <div id="contact-info" class="p-6 hidden">
+                <h2 class="text-xl font-semibold mb-4">New York State Programs & Agencies</h2>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>NY State Homeowner Assistance Fund:</strong> 844-776-9423, <a
+                            href="https://www.nyhomeownerfund.org/" target="_blank"
+                            class="text-blue-500 hover:underline">https://www.nyhomeownerfund.org/</a></li>
+                    <li><strong>NY State Mortgage Assistance Program (NYS-MAP):</strong> Email <a
+                            href="mailto:nys-map@staging.cnycn.org">nys-map@staging.cnycn.org</a>, <a
+                            href="https://staging.cnycn.org/knowledgebase/new-york-state-mortgage-assistance-program/"
+                            target="_blank" class="text-blue-500 hover:underline">https://staging.cnycn.org/knowledgebase/new-york-state-mortgage-assistance-program/</a>
+                    </li>
+                    <li><strong>State of New York Mortgage Agency (SONYMA):</strong> 800-382-HOME (800-382-4663), <a
+                            href="https://hcr.ny.gov/sonyma" target="_blank"
+                            class="text-blue-500 hover:underline">https://hcr.ny.gov/sonyma</a></li>
+                    <li><strong>New York City Housing Development Corporation:</strong> 212-227-5500, <a
+                            href="https://www.ncsha.org/housing-service/new-york-city-housing-development-corporation/"
+                            target="_blank" class="text-blue-500 hover:underline">https://www.ncsha.org/housing-service/new-york-city-housing-development-corporation/</a>
+                    </li>
+                    <li><strong>NY Department of Financial Services - Help for Homeowners:</strong> <a
+                            href="https://www.dfs.ny.gov/consumers/help_for_homeowners" target="_blank"
+                            class="text-blue-500 hover:underline">https://www.dfs.ny.gov/consumers/help_for_homeowners</a>
+                    </li>
+                    <li><strong>NYS Fraud Tip Line:</strong> 212-872-0614, Email: <a
+                            href="mailto:FraudTip@hcr.ny.gov">FraudTip@hcr.ny.gov</a></li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mb-4">Federal Housing Resources</h2>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>HUD Housing Counselor Referral Line:</strong> 800-569-4287, <a
+                            href="https://www.hud.gov/counseling" target="_blank"
+                            class="text-blue-500 hover:underline">https://www.hud.gov/counseling</a> (8:00 AM - 8:00 PM ET)
+                    </li>
+                    <li><strong>HUD TTY Line:</strong> 202-708-1455</li>
+                    <li><strong>HOPE NOW Hotline:</strong> 888-995-HOPE (888-995-4673), <a href="https://995hope.org"
+                            target="_blank" class="text-blue-500 hover:underline">https://995hope.org</a> (24-hour service)
+                    </li>
+                    <li><strong>Consumer Financial Protection Bureau:</strong> 1-855-411-CFPB (2372), <a
+                            href="https://www.consumerfinance.gov/mortgagehelp/" target="_blank"
+                            class="text-blue-500 hover:underline">https://www.consumerfinance.gov/mortgagehelp/</a></li>
+                    <li><strong>Housing Counselor Finder:</strong> <a
+                            href="https://www.consumerfinance.gov/find-a-housing-counselor/" target="_blank"
+                            class="text-blue-500 hover:underline">https://www.consumerfinance.gov/find-a-housing-counselor/</a>
+                    </li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mb-4">Mortgage Servicers</h2>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>Cenlar Loss Mitigation Department:</strong> 1-800-2CENLAR (1-800-223-6527), <a
+                            href="https://loanadministration.com" target="_blank"
+                            class="text-blue-500 hover:underline">https://loanadministration.com</a></li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mb-4">Credit Card Assistance</h2>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>Bank of America Consumer Credit Cards:</strong> 855-891-3401 (Customer Service)</li>
+                    <li><strong>Bank of America Small Business Credit Cards:</strong> 888-306-4949</li>
+                    <li><strong>International Credit Card Service:</strong> 1-757-677-4701</li>
+                    <li><strong>Online Credit Card Assistance:</strong> <a
+                            href="https://www.bankofamerica.com/banking-information/assistance/credit-cards/"
+                            target="_blank"
+                            class="text-blue-500 hover:underline">https://www.bankofamerica.com/banking-information/assistance/credit-cards/</a>
+                    </li>
+                    <li><strong>Hours:</strong> Monday through Friday, 9 a.m. to 9 p.m. ET</li>
+                </ul>
+
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>American Express Financial Relief Program:</strong> 1-866-703-4169</li>
+                    <li><strong>Hours:</strong> Monday through Friday, 8 a.m. to 10 p.m. ET</li>
+                    <li><strong>Online Access:</strong> <a href="https://global.americanexpress.com/financial-relief"
+                            target="_blank" class="text-blue-500 hover:underline">https://global.americanexpress.com/financial-relief</a>
+                    </li>
+                    <li><strong>International Assistance:</strong> Check regional websites for specific contact numbers</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mb-4">New York Housing Counseling Organizations</h2>
+                <ol class="list-decimal list-inside mb-4">
+                    <li><strong>Community Housing Innovations, Inc.:</strong> 914-683-1010, <a
+                            href="www.communityhousing.org" target="_blank"
+                            class="text-blue-500 hover:underline">www.communityhousing.org</a>
+                        <br>75 South Broadway, #340, White Plains, NY, 10601 (Mon-Fri, 8:30am-6pm)
+                    </li>
+                    <li><strong>Housing & Family Services of Greater NY:</strong> 718-435-7585, <a
+                            href="brooklynhousing.org" target="_blank"
+                            class="text-blue-500 hover:underline">brooklynhousing.org</a>
+                        <br>415 Albemarle Road, Brooklyn, NY, 11218 (Mon-Fri, 9am-5pm by appointment)
+                    </li>
+                    <li><strong>Human Development Services of Westchester:</strong> 914-835-8906, <a href="www.hdsw.org"
+                            target="_blank" class="text-blue-500 hover:underline">www.hdsw.org</a>
+                        <br>930 Mamaroneck Avenue, Mamaroneck, NY, 10543 (Mon-Fri, 9am-5pm)
+                    </li>
+                    <li><strong>Putnam County Housing Corporation:</strong> 845-225-8493, <a href="putnamhousing.com"
+                            target="_blank" class="text-blue-500 hover:underline">putnamhousing.com</a>
+                        <br>11 Seminary Hill Road, Carmel, NY, 10512 (Mon-Fri, 8:30am-4:30pm)
+                    </li>
+                    <li><strong>The SafeGuard Group:</strong> 800-673-6993 ext. 146, <a href="www.safeguardcredit.org"
+                            target="_blank" class="text-blue-500 hover:underline">www.safeguardcredit.org</a>
+                        <br>67 Fort Salonga Road, Northport, NY, 11768 (Mon-Fri, 9am-5:30pm)
+                    </li>
+                    <li><strong>Westchester Residential Opportunities:</strong> 914-428-4507 ext. 338, <a
+                            href="www.wroinc.org" target="_blank"
+                            class="text-blue-500 hover:underline">www.wroinc.org</a>
+                        <br>470 Mamaroneck Avenue, Suite 410, White Plains, NY, 10605 (Mon-Fri, 8am-5pm)
+                    </li>
+                </ol>
+
+                <h2 class="text-xl font-semibold mb-4">Additional Resources</h2>
                 <ul class="list-disc list-inside">
-                    <li>Consumer Financial Protection Bureau: <a href="https://www.consumerfinance.gov/mortgagehelp/" target="_blank" class="text-blue-500 hover:underline">https://www.consumerfinance.gov/mortgagehelp/</a></li>
-                    <li>Housing Counselor Finder: <a href="https://www.consumerfinance.gov/find-a-housing-counselor/" target="_blank" class="text-blue-500 hover:underline">https://www.consumerfinance.gov/find-a-housing-counselor/</a>
+                    <li><strong>National Council of State Housing Agencies:</strong> <a
+                            href="https://www.ncsha.org/homeowner-assistance-fund/#HAF-MAP" target="_blank"
+                            class="text-blue-500 hover:underline">https://www.ncsha.org/homeowner-assistance-fund/#HAF-MAP</a>
                     </li>
-                    <li>National Council of State Housing Agencies: <a href="https://www.ncsha.org/homeowner-assistance-fund/#HAF-MAP" target="_blank" class="text-blue-500 hover:underline">https://www.ncsha.org/homeowner-assistance-fund/#HAF-MAP</a>
+                    <li><strong>State Housing Agency Directory:</strong> <a
+                            href="https://www.ncsha.org/states/new-york/" target="_blank"
+                            class="text-blue-500 hover:underline">https://www.ncsha.org/states/new-york/</a></li>
+                    <li><strong>NYC Comptroller Housing Resources:</strong> <a
+                            href="https://comptroller.nyc.gov/services/for-the-public/covid-19-recovery-center/english/homeowners/"
+                            target="_blank"
+                            class="text-blue-500 hover:underline">https://comptroller.nyc.gov/services/for-the-public/covid-19-recovery-center/english/homeowners/</a>
                     </li>
-                    <li>State Housing Agency Directory: <a href="https://www.ncsha.org/states/new-york/" target="_blank" class="text-blue-500 hover:underline">https://www.ncsha.org/states/new-york/</a></li>
-                    <li>NYC Comptroller Resource: <a href="https://comptroller.nyc.gov/services/for-the-public/covid-19-recovery-center/english/homeowners/" target="_blank" class="text-blue-500 hover:underline">https://comptroller.nyc.gov/services/for-the-public/covid-19-recovery-center/english/homeowners/</a>
+                    <li><strong>NY Homeowner Assistance Fund Resources:</strong> <a
+                            href="https://www.nyhomeownerfund.org/homeowner-resources" target="_blank"
+                            class="text-blue-500 hover:underline">https://www.nyhomeownerfund.org/homeowner-resources</a>
                     </li>
-                    <li>NY Department of Financial Services - Help for Homeowners: <a href="https://www.dfs.ny.gov/consumers/help_for_homeowners" target="_blank" class="text-blue-500 hover:underline">https://www.dfs.ny.gov/consumers/help_for_homeowners</a>
+                    <li><strong>NY Homeowner Assistance Fund Local Support:</strong> <a
+                            href="https://www.nyhomeownerfund.org/get-local-support" target="_blank"
+                            class="text-blue-500 hover:underline">https://www.nyhomeownerfund.org/get-local-support</a>
                     </li>
                 </ul>
             </div>
         </div>
 
         <div class="bg-white rounded-lg shadow-md mb-4 overflow-hidden">
-            <button class="w-full text-left py-4 px-6 font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none" onclick="toggleSection('important-protections')">
-                Important Protections
+            <button id="main-programs-button"
+                class="w-full text-left py-4 px-6 font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                onclick="toggleSection('main-programs')">
+                Main Assistance Programs
                 <i class="fas fa-chevron-down ml-2"></i>
             </button>
-            <div id="important-protections" class="p-6 hidden">
+            <div id="main-programs" class="p-6 hidden">
+                <h2 class="text-xl font-semibold mb-4">New York State Programs</h2>
+                <ol class="list-decimal list-inside mb-4">
+                    <li>
+                        <strong>New York State Homeowner Assistance Fund</strong>
+                        <ul>
+                            <li>Status: <strong>CLOSED</strong></li>
+                            <li>Website: <a href="https://www.nyhomeownerfund.org/" target="_blank"
+                                    class="text-blue-500 hover:underline">https://www.nyhomeownerfund.org/</a></li>
+                            <li>Resources: <a href="https://www.nyhomeownerfund.org/homeowner-resources" target="_blank"
+                                    class="text-blue-500 hover:underline">https://www.nyhomeownerfund.org/homeowner-resources</a>
+                            </li>
+                            <li>Local Support: <a href="https://www.nyhomeownerfund.org/get-local-support"
+                                    target="_blank"
+                                    class="text-blue-500 hover:underline">https://www.nyhomeownerfund.org/get-local-support</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>New York State Mortgage Assistance Program (NYS-MAP)</strong>
+                        <ul>
+                            <li>Administrator: Center for NYC Neighborhoods</li>
+                            <li>Website: <a
+                                    href="https://staging.cnycn.org/knowledgebase/new-york-state-mortgage-assistance-program/"
+                                    target="_blank"
+                                    class="text-blue-500 hover:underline">https://staging.cnycn.org/knowledgebase/new-york-state-mortgage-assistance-program/</a>
+                            </li>
+                            <li>Offering: 0% interest loans up to $80,000</li>
+                            <li>Purpose: Bring mortgage current, help get modifications, pay tax arrears, settle debts that
+                                could lead to foreclosure</li>
+                            <li>Works with both Cenlar and Bank of America</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>State of New York Mortgage Agency (SONYMA)</strong>
+                        <ul>
+                            <li>Phone: 800-382-HOME (800-382-4663)</li>
+                            <li>Website: <a href="https://hcr.ny.gov/sonyma" target="_blank"
+                                    class="text-blue-500 hover:underline">https://hcr.ny.gov/sonyma</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Homeowner Protection Program (HOPP)</strong>
+                        <ul>
+                            <li>Network of 89 housing counseling and legal services organizations</li>
+                            <li>Provides free help to homeowners at risk of losing their homes</li>
+                            <li>Connect with quality counseling or legal services</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>HomeFirst Down Payment Assistance Program</strong>
+                        <ul>
+                            <li>Primarily for new homebuyers, but offers counseling services</li>
+                            <li>Can direct you to other assistance options</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h2 class="text-xl font-semibold mb-4">Federal Programs</h2>
+                <ol class="list-decimal list-inside">
+                    <li>
+                        <strong>HUD Housing Counseling</strong>
+                        <ul>
+                            <li>Phone: 800-569-4287</li>
+                            <li>Website: <a href="https://www.hud.gov/counseling" target="_blank"
+                                    class="text-blue-500 hover:underline">https://www.hud.gov/counseling</a></li>
+                            <li>Hours: 8:00 AM - 8:00 PM ET</li>
+                            <li>TTY: 202-708-1455</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Homeowner Assistance Fund (HAF)</strong>
+                        <ul>
+                            <li>Established by American Rescue Plan Act</li>
+                            <li>Financial assistance for eligible homeowners with COVID-19 hardships</li>
+                            <li>Funds may be used for mortgage payments, reinstatement, utilities, and other housing costs</li>
+                            <li>Bank of America works with New York's HAF program</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>HOPE NOW Alliance/Homeowner's HOPE Hotline</strong>
+                        <ul>
+                            <li>Phone: 888-995-HOPE (888-995-4673)</li>
+                            <li>Website: <a href="995hope.org" target="_blank"
+                                    class="text-blue-500 hover:underline">995hope.org</a></li>
+                            <li>24-hour toll-free hotline offering free counseling</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>FHA Loss Mitigation Options</strong>
+                        <ul>
+                            <li>Available for FHA-insured mortgages</li>
+                            <li>Administered through National Servicing Center (NSC)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md mb-4 overflow-hidden">
+            <button id="mortgage-assistance-button"
+                class="w-full text-left py-4 px-6 font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                onclick="toggleSection('mortgage-assistance')">
+                Types of Mortgage Assistance
+                <i class="fas fa-chevron-down ml-2"></i>
+            </button>
+            <div id="mortgage-assistance" class="p-6 hidden">
+                <h2 class="text-xl font-semibold mb-4">Cenlar Options</h2>
+                <ul class="list-disc list-inside mb-4">
+                    <li>
+                        <strong>Forbearance:</strong> Temporarily reduces or suspends mortgage payments during financial
+                        hardship
+                    </li>
+                    <li>
+                        <strong>Loan Modification:</strong> Changes loan terms to make payments more affordable, may
+                        include:
+                        <ul>
+                            <li>Extending the loan term</li>
+                            <li>Reducing interest rates</li>
+                            <li>Restructuring payments to fit borrower's budget</li>
+                            <li>Moving missed payments to the end of the loan</li>
+                        </ul>
+                    </li>
+                    <li><strong>Repayment Plans:</strong> Allows gradual catch-up on missed payments over time</li>
+                    <li><strong>Reinstatement:</strong> Option to pay missed amounts in a lump sum if able</li>
+                    <li><strong>Payment Deferral:</strong> Moves missed payments to the end of the loan term</li>
+                    <li><strong>Special Disaster Assistance:</strong> Available for natural disasters</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mb-4">Eligibility Requirements for Cenlar Assistance</h2>
+                <ul class="list-disc list-inside mb-4">
+                    <li>Financial hardship (job loss, illness, disaster, divorce)</li>
+                    <li>Documentation of hardship must be provided</li>
+                    <li>Property must be residential (primary residence preferred)</li>
+                    <li>Ability to resume payments after temporary assistance</li>
+                    <li>For loan modifications, must demonstrate ability to make modified payments</li>
+                </ul>
+
+                <h2 class="text-xl font-semibold mb-4">Cenlar Assistance Application Process</h2>
+                <ol class="list-decimal list-inside">
+                    <li>Contact Cenlar at 1-800-2CENLAR (1-800-223-6527)</li>
+                    <li>Prepare documentation of hardship and financial situation</li>
+                    <li>Complete required application forms</li>
+                    <li>Work with assigned representative</li>
+                    <li>For loan modifications, may need to complete a trial payment period</li>
+                    <li>Sign and return final agreement documents</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md mb-4 overflow-hidden">
+            <button id="credit-card-assistance-button"
+                class="w-full text-left py-4 px-6 font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                onclick="toggleSection('credit-card-assistance')">
+                Credit Card Assistance Programs
+                <i class="fas fa-chevron-down ml-2"></i>
+            </button>
+            <div id="credit-card-assistance" class="p-6 hidden">
+                <h2 class="text-xl font-semibold mb-4">Bank of America Credit Card Assistance</h2>
+
+                <h3 class="text-lg font-semibold mb-2">Credit Card Hardship Programs</h3>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>Customer Assistance Program:</strong> Available to help customers experiencing financial
+                        hardship manage credit card debt</li>
+                    <li>
+                        <strong>Payment Relief Options:</strong>
+                        <ul>
+                            <li><strong>Lower Interest Rates:</strong> Temporary reduction from 20-30% down to as low as 7-8%
+                                (or even 0% in some cases)</li>
+                            <li><strong>Fee Waivers:</strong> Elimination of late fees, overdraft fees, and monthly maintenance
+                                fees</li>
+                            <li><strong>Payment Deferrals:</strong> Option to temporarily postpone payments during hardship
+                                periods</li>
+                            <li><strong>Reduced Minimum Payments:</strong> Lower monthly payment requirements to fit reduced
+                                income situations</li>
+                            <li><strong>Debt Management Plans:</strong> Partnerships with credit counseling agencies for
+                                long-term debt solutions</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mb-2">Eligibility Requirements</h3>
+                <p>To qualify for Bank of America credit card hardship assistance:</p>
+                <ul class="list-disc list-inside mb-4">
+                    <li>Must have a documented financial hardship (job loss, medical emergency, natural disaster, divorce)
+                    </li>
+                    <li>Situation must be compelling - simply wanting a lower rate is not sufficient</li>
+                    <li>May need to demonstrate ability to make reduced payments</li>
+                    <li>Must typically stop using the credit card during the program period</li>
+                    <li>Credit cards must have been open for a minimum period (varies by program)</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mb-2">How to Apply</h3>
+                <ol class="list-decimal list-inside mb-4">
+                    <li>
+                        <strong>Contact Bank of America:</strong>
+                        <ul>
+                            <li>Consumer Cards: 855-891-3401</li>
+                            <li>Small Business Cards: 888-306-4949</li>
+                            <li>International: 1-757-677-4701</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Online options:</strong>
+                        <ul>
+                            <li>Log in to Online Banking at <a
+                                    href="www.bankofamerica.com">www.bankofamerica.com</a></li>
+                            <li>Submit request through the Client Assistance Program portal</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Be prepared with:</strong>
+                        <ul>
+                            <li>Credit card account numbers</li>
+                            <li>Details about your financial hardship</li>
+                            <li>Current income and expense information</li>
+                            <li>Recent financial statements if available</li>
+                        </ul>
+                    </li>
+                    <li>Complete any required documentation promptly</li>
+                    <li>Consider setting up automatic payments to ensure program compliance</li>
+                </ol>
+
+                <h3 class="text-lg font-semibold mb-2">Program Details</h3>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>Duration:</strong> Hardship programs typically last 3-12 months depending on circumstances
+                    </li>
+                    <li><strong>Credit Reporting:</strong> Participation may be reported to credit bureaus as "paying under
+                        a partial payment plan"</li>
+                    <li><strong>Credit Limits:</strong> May be reduced while in the program</li>
+                    <li><strong>Automatic Payments:</strong> Often required to ensure timely payments during the program
+                        period</li>
+                    <li><strong>Interest:</strong> May continue to accrue even if payments are reduced or paused</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mb-2">Additional Support Resources</h3>
                 <ul class="list-disc list-inside">
-                    <li>Your mortgage servicer can't start foreclosure until you're more than 120 days behind</li>
-                    <li>Servicer can't start foreclosure while evaluating a complete application for assistance</li>
-                    <li>Early application provides more protections</li>
+                    <li><strong>Credit Counseling Referrals:</strong> Free access to nonprofit credit counseling agencies
+                    </li>
+                    <li><strong>Financial Education:</strong> Resources available at <a
+                            href="www.bankofamerica.com">www.bankofamerica.com</a></li>
+                    <li><strong>Better Money Habits:</strong> Educational content on budgeting and debt management</li>
+                    <li><strong>Debt Management Plans:</strong> Longer-term solutions (3-5 years) through partner agencies
+                    </li>
+                </ul>
+                <hr class="my-4">
+
+                <h2 class="text-xl font-semibold mb-4">American Express Financial Relief Program</h2>
+
+                <h3 class="text-lg font-semibold mb-2">Program Features</h3>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>Reduced Interest Rates:</strong> Temporary lowering of interest rates on eligible accounts
+                    </li>
+                    <li><strong>Lower Monthly Payments:</strong> Reduced minimum payment requirements</li>
+                    <li><strong>Fee Relief:</strong> Waiver of late payment fees and other charges</li>
+                    <li><strong>Payment Plans:</strong> Structured payment arrangements based on financial situation</li>
+                    <li><strong>Account Status Protection:</strong> Prevention of further delinquency while in the program
+                    </li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mb-2">Eligibility Requirements</h3>
+                <p>To qualify for American Express hardship assistance:</p>
+                <ul class="list-disc list-inside mb-4">
+                    <li>Must be experiencing genuine financial hardship</li>
+                    <li>May need to demonstrate inability to make regular payments</li>
+                    <li>Documentation of hardship may be required</li>
+                    <li>Account review will consider delinquency status and prior program enrollment</li>
+                    <li>Balance and account history will be evaluated</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mb-2">How to Apply</h3>
+                <ol class="list-decimal list-inside mb-4">
+                    <li>
+                        <strong>Contact American Express Financial Relief Program:</strong>
+                        <ul>
+                            <li>Phone: 1-866-703-4169</li>
+                            <li>Hours: Monday through Friday, 8 a.m. to 10 p.m. ET</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Online access:</strong>
+                        <ul>
+                            <li>Log in at <a
+                                    href="https://global.americanexpress.com/financial-relief">https://global.americanexpress.com/financial-relief</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Prepare to discuss:</strong>
+                        <ul>
+                            <li>The nature of your financial hardship</li>
+                            <li>Your current income and expenses</li>
+                            <li>Proof of financial difficulty if required</li>
+                            <li>How long you anticipate needing assistance</li>
+                        </ul>
+                    </li>
+                    <li>Complete the Income & Expenditure form if required</li>
+                    <li>Work with the assigned specialist to determine the best solution</li>
+                </ol>
+
+                <h3 class="text-lg font-semibold mb-2">Program Impact and Considerations</h3>
+                <ul class="list-disc list-inside mb-4">
+                    <li><strong>Card Usage:</strong> Your ability to use the card will likely be impacted during the program
+                    </li>
+                    <li><strong>Credit Score Impact:</strong> Enrollment may affect your credit score</li>
+                    <li><strong>Credit Limit Changes:</strong> Limits may be reduced during the program period</li>
+                    <li><strong>Program Duration:</strong> Typically designed for temporary relief (varies by situation)</li>
+                    <li><strong>Post-Program Options:</strong> Additional assistance may be available if hardship continues
+                    </li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mb-2">Additional Support</h3>
+                <ul class="list-disc list-inside">
+                    <li><strong>Debt Management Companies:</strong> Amex may refer customers to credit counseling services
+                    </li>
+                    <li><strong>Financial Education Resources:</strong> Available through American Express website</li>
+                    <li><strong>Alternative Payment Options:</strong> Different arrangements for various hardship
+                        situations</li>
+                    <li><strong>Specialized Support Teams:</strong> Dedicated representatives for hardship assistance</li>
                 </ul>
             </div>
         </div>
 
-        <div class="bg-white rounded-lg shadow-md overflow-hidden">
-            <button class="w-full text-left py-4 px-6 font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none" onclick="toggleSection('reporting-fraud')">
-                Reporting Fraud
+        <div class="bg-white rounded-lg shadow-md mb-4 overflow-hidden">
+            <button id="nys-map-eligibility-button"
+                class="w-full text-left py-4 px-6 font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                onclick="toggleSection('nys-map-eligibility')">
+                Eligibility Requirements for NYS-MAP
                 <i class="fas fa-chevron-down ml-2"></i>
             </button>
-            <div id="reporting-fraud" class="p-6 hidden">
+            <div id="nys-map-eligibility" class="p-6 hidden">
                 <ul class="list-disc list-inside">
-                    <li><strong>Email:</strong> <a href="mailto:FraudTip@hcr.ny.gov">FraudTip@hcr.ny.gov</a></li>
-                    <li><strong>Phone:</strong> 212-872-0614</li>
-                    <li><strong>Mail:</strong> New York State Homeowner Assistance Fund (NYS HAF)
-                        <br>c/o NYS Homes and Community Renewal
-                        <br>641 Lexington Avenue, 5th Floor
-                        <br>New York, NY 10022
-                    </li>
+                    <li><strong>Financial Hardship:</strong> Must have documented financial hardship affecting ability to
+                        pay mortgage</li>
+                    <li><strong>Primary Residence:</strong> Property must be your primary residence in NY State</li>
+                    <li><strong>Risk of Foreclosure:</strong> Must be at risk of foreclosure, behind on payments, or struggling
+                        with property tax/utility arrears</li>
+                    <li><strong>Affordability Post-Assistance:</strong> Must demonstrate ability to afford future housing
+                        payments after receiving aid</li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mt-4">Loan Details</h3>
+                <ul class="list-disc list-inside">
+                    <li><strong>Amount:</strong> Up to $40,000–$80,000 (varies by program iteration)</li>
+                    <li><strong>Interest:</strong> 0% interest, no monthly payments required</li>
+                    <li><strong>Repayment:</strong> Full principal due upon sale, refinance, or default</li>
                 </ul>
             </div>
         </div>
-        </body></html>
+
+        <div class="bg-white rounded-lg shadow-md mb-4 overflow-hidden">
+            <button id="cant-pay-mortgage-button"
+                class="w-full text-left py-4 px-6 font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                onclick="toggleSection('cant-pay-mortgage')">
+                Steps When You Can't Pay Your Mortgage
+                <i class="fas fa-chevron-down ml-2"></i>
+            </button>
+            <div id="cant-pay-mortgage" class="p-6 hidden">
+                <ol class="list-decimal list-inside">
+                    <li>
+                        <strong>Contact your mortgage servicer immediately</strong>
+                        <ul>
+                            <li>
+                                Options may include:
+                                <ul>
+                                    <li><strong>Reinstatement:</strong> Repay full amount of deferred payments in one lump
+                                        sum</li>
+                                    <li><strong>Repayment:</strong> Deferred payments added to current monthly payment</li>
+                                    <li><strong>Loan modification:</strong> Reduced monthly payments with longer term</li>
+                                    <li><strong>Payment deferral:</strong> Missed payments due at end of loan term</li>
+                                    <li><strong>Extended loan term:</strong> Spread out payments over longer period</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Prepare documentation</strong>
+                        <ul>
+                            <li>Have loan numbers, monthly income, household expenses, and hardship information ready</li>
+                            <li>Gather mortgage statements, bank statements, tax returns, and hardship documentation</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Get free help from professionals</strong>
+                        <ul>
+                            <li>Contact a HUD-approved housing counselor (800-569-4287)</li>
+                            <li>Reach out to NY Homeowner Protection Program through their Homeowner Hub (Monday-Friday,
+                                9am-5pm)</li>
+                            <li>If you have multiple mortgages, a housing counselor can coordinate assistance for all loans
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Apply for assistance programs</strong>
+                        <ul>
+                            <li>Work with a housing counselor to review eligibility and complete applications</li>
+                            <li>Apply early - your mortgage servicer can't start foreclosure until you're 120+ days behind
+                            </li>
+                            <li>Servicer can't start foreclosure while evaluating a complete assistance application</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md mb-4 overflow-hidden">
+            <button id="local-support-button"
+                class="w-full text-left py-4 px-6 font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                onclick="toggleSection('local-support')">
+                Local Support Organizations
+                <i class="fas fa-chevron-down ml-2"></i>
+            </button>
+            <div id="local-support" class="p-6 hidden">
+                <h3 class="text-lg font-semibold mb-2">New York City & State Housing Agencies</h3>
+                <ul class="list-disc list-inside mb-4">
+                    <li>
+                        <strong>New York City Housing Development Corporation</strong>
+                        <ul>
+                            <li>Phone: 212-227-5500</li>
+                            <li>Website: <a
+                                    href="https://www.ncsha.org/housing-service/new-york-city-housing-development-corporation/"
+                                    target="_blank"
+                                    class="text-blue-500 hover:underline">https://www.ncsha.org/housing-service/new-york-city-housing-development-corporation/</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 class="text-lg font-semibold mb-2">Housing Counseling Organizations</h3>
+                <ol class="list-decimal list-inside">
+                    <li>
+<strong>Community Housing Innovations, Inc.</strong>
+                        <ul>
+                            <li>Phone: 914-683-1010</li>
+                            <li>Website: <a href="www.communityhousing.org" target="_blank"
+                                    class="text-blue-500 hover:underline">www.communityhousing.org</a></li>
+                            <li>Languages <li>Languages: English, Spanish</li>
+                                    <li>Services: Housing Counseling</li>
+                                    <li>Assistance: In Person and Phone Counseling</li>
+                                    <li>Hours: Monday - Friday, 8:30am - 6pm</li>
+                                    <li>Address: 75 South Broadway, #340, White Plains, NY, 10601</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Housing & Family Services of Greater NY</strong>
+                                <ul>
+                                    <li>Phone: 718-435-7585</li>
+                                    <li>Website: <a href="brooklynhousing.org" target="_blank"
+                                            class="text-blue-500 hover:underline">brooklynhousing.org</a></li>
+                                    <li>Languages: English, Spanish, Creole, Russian, Mandarin, Cantonese</li>
+                                    <li>Services: Housing Counseling</li>
+                                    <li>Assistance: In Person and Phone Counseling</li>
+                                    <li>Hours: Monday - Friday, 9am - 5pm by appointment</li>
+                                    <li>Address: 415 Albemarle Road, Brooklyn, NY, 11218</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Human Development Services of Westchester, Inc.</strong>
+                                <ul>
+                                    <li>Phone: 914-835-8906</li>
+                                    <li>Website: <a href="www.hdsw.org" target="_blank"
+                                            class="text-blue-500 hover:underline">www.hdsw.org</a></li>
+                                    <li>Languages: English, Spanish</li>
+                                    <li>Services: Housing Counseling</li>
+                                    <li>Assistance: In Person and Phone Counseling</li>
+                                    <li>Hours: Monday - Friday, 9am - 5pm</li>
+                                    <li>Address: 930 Mamaroneck Avenue, Mamaroneck, NY, 10543</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Putnam County Housing Corporation</strong>
+                                <ul>
+                                    <li>Phone: 845-225-8493</li>
+                                    <li>Website: <a href="putnamhousing.com" target="_blank"
+                                            class="text-blue-500 hover:underline">putnamhousing.com</a></li>
+                                    <li>Languages: English, Spanish, Polish</li>
+                                    <li>Services: Housing Counseling</li>
+                                    <li>Assistance: Phone Counseling</li>
+                                    <li>Hours: Monday - Friday, 8:30am - 4:30pm</li>
+                                    <li>Address: 11 Seminary Hill Road, Carmel, NY, 10512</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>The SafeGuard Group</strong>
+                                <ul>
+                                    <li>Phone: 800-673-6993 ext. 146</li>
+                                    <li>Website: <a href="www.safeguardcredit.org" target="_blank"
+                                            class="text-blue-500 hover:underline">www.safeguardcredit.org</a></li>
+                                    <li>Languages: English, Spanish</li>
+                                    <li>Services: Housing Counseling</li>
+                                    <li>Assistance: Phone Counseling</li>
+                                    <li>Hours: Monday - Friday, 9am - 5:30pm</li>
+                                    <li>Address: 67 Fort Salonga Road, Northport, NY, 11768</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Westchester Residential Opportunities</strong>
+                                <ul>
+                                    <li>Phone: 914-428-4507 ext. 338</li>
+                                    <li>Website: <a href="www.wroinc.org" target="_blank"
+                                            class="text-blue-500 hover:underline">www.wroinc.org</a></li>
+                                    <li>Languages: English, Spanish, French</li>
+                                    <li>Services: Housing Counseling</li>
+                                    <li>Assistance: In Person and Phone Counseling</li>
+                                    <li>Hours: Monday - Friday, 8am - 5pm</li>
+                                    <li>Address: 470 Mamaroneck Avenue, Suite 410, White Plains, NY, 10605</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md mb-4 overflow-hidden">
+                    <button id="additional-resources-button"
+                        class="w-full text-left py-4 px-6 font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                        onclick="toggleSection('additional-resources')">
+                        Additional Resources
+                        <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                    <div id="additional-resources" class="p-6 hidden">
+                        <ul class="list-disc list-inside">
+                            <li>Consumer Financial Protection Bureau: <a
+                                    href="https://www.consumerfinance.gov/mortgagehelp/" target="_blank"
+                                    class="text-blue-500 hover:underline">https://www.consumerfinance.gov/mortgagehelp/</a></li>
+                            <li>Housing Counselor Finder: <a
+                                    href="https://www.consumerfinance.gov/find-a-housing-counselor/" target="_blank"
+                                    class="text-blue-500 hover:underline">https://www.consumerfinance.gov/find-a-housing-counselor/</a>
+                            </li>
+                            <li>National Council of State Housing Agencies: <a
+                                    href="https://www.ncsha.org/homeowner-assistance-fund/#HAF-MAP" target="_blank"
+                                    class="text-blue-500 hover:underline">https://www.ncsha.org/homeowner-assistance-fund/#HAF-MAP</a>
+                            </li>
+                            <li>State Housing Agency Directory: <a
+                                    href="https://www.ncsha.org/states/new-york/" target="_blank"
+                                    class="text-blue-500 hover:underline">https://www.ncsha.org/states/new-york/</a></li>
+                            <li>NYC Comptroller Housing Resources: <a
+                                    href="https://comptroller.nyc.gov/services/for-the-public/covid-19-recovery-center/english/homeowners/"
+                                    target="_blank"
+                                    class="text-blue-500 hover:underline">https://comptroller.nyc.gov/services/for-the-public/covid-19-recovery-center/english/homeowners/</a>
+                            </li>
+                            <li>NY Department of Financial Services - Help for Homeowners: <a
+                                    href="https://www.dfs.ny.gov/consumers/help_for_homeowners" target="_blank"
+                                    class="text-blue-500 hover:underline">https://www.dfs.ny.gov/consumers/help_for_homeowners</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md mb-4 overflow-hidden">
+                    <button id="important-protections-button"
+                        class="w-full text-left py-4 px-6 font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                        onclick="toggleSection('important-protections')">
+                        Important Protections
+                        <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                    <div id="important-protections" class="p-6 hidden">
+                        <ul class="list-disc list-inside">
+                            <li>Your mortgage servicer can't start foreclosure until you're more than 120 days behind</li>
+                            <li>Servicer can't start foreclosure while evaluating a complete application for assistance</li>
+                            <li>Early application provides more protections</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <button id="reporting-fraud-button"
+                        class="w-full text-left py-4 px-6 font-semibold text-gray-700 hover:bg-gray-100 focus:outline-none"
+                        onclick="toggleSection('reporting-fraud')">
+                        Reporting Fraud
+                        <i class="fas fa-chevron-down ml-2"></i>
+                    </button>
+                    <div id="reporting-fraud" class="p-6 hidden">
+                        <ul class="list-disc list-inside">
+                            <li><strong>Email:</strong> <a href="mailto:FraudTip@hcr.ny.gov">FraudTip@hcr.ny.gov</a></li>
+                            <li><strong>Phone:</strong> 212-872-0614</li>
+                            <li><strong>Mail:</strong> New York State Homeowner Assistance Fund (NYS HAF)
+                                <br>c/o NYS Homes and Community Renewal
+                                <br>641 Lexington Avenue, 5th Floor
+                                <br>New York, NY 10022
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+    </div>
+</body>
+
+</html>
+
